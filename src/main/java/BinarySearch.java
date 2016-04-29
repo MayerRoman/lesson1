@@ -15,6 +15,9 @@ public class BinarySearch {
             middle = (end + start) / 2;
 
             if (array[middle] == elementToFind) {
+                while (middle > 0 && array[middle - 1] == elementToFind) {
+                    middle--;
+                }
                 return middle;
 
             } else if (array[middle] < elementToFind) {
@@ -34,7 +37,7 @@ public class BinarySearch {
         int[] array2 = {3, 3, 3};
         System.out.println(binarySearch(array2, 3));
 
-        int[] array3 = {-55, -44, -33, -25, -11, -2, 15, 28, 38, 49};
+        int[] array3 = {-55, -44, -33, -25, -11, -2, 15, 28, 28, 38, 49};
         System.out.println(binarySearch(array3, 28));
     }
 }
